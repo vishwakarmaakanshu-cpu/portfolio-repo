@@ -1,0 +1,18 @@
+<section class="section wrap">
+  <div class="section-head">
+    <p class="kicker">Technical skills</p>
+    <h2>What I use to design and ship the interface.</h2>
+  </div>
+  <div class="skill-groups">
+    @for (group of groups; track group.label) {
+      <div>
+        <p class="kicker">{{ group.label }}</p>
+        <ul class="skill-board">
+          @for (skill of group.skills; track skill) {
+            <li>{{ skill }}</li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+</section>

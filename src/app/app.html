@@ -1,454 +1,632 @@
-<!-- NAVBAR -->
-<header class="navbar">
-  <div class="nav-container">
-    <a class="logo" href="#home">AV<span>.</span></a>
+<a class="skip" href="#main">Skip to content</a>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#journey">Journey</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <a class="resume-btn" href="#contact">Let's Talk ↗</a>
-  </div>
-</header>
-
-
-<!-- HERO -->
-<section id="home" class="hero">
-  <div class="hero-content">
-
-    <div class="availability">
-      <span></span> Available for opportunities
-    </div>
-
-    <p class="eyebrow">UI/UX • FRONTEND • ANGULAR</p>
-
-    <h1>
-      Building digital
-      <span>experiences</span>
-      that matter.
-    </h1>
-
-    <p class="hero-description">
-      Hi, I'm <strong>Akanshu Vishwakarma</strong> — a UI/UX & Frontend Developer
-      focused on creating modern, scalable and user-friendly web applications.
-    </p>
-
-    <div class="hero-buttons">
-      <a href="#projects" class="primary-btn">View My Work ↗</a>
-      <a href="#about" class="secondary-btn">More About Me</a>
-    </div>
-
-    <div class="hero-stats">
-      <div>
-        <strong>8+</strong>
-        <span>Years Experience</span>
-      </div>
-
-      <div>
-        <strong>20+</strong>
-        <span>Projects Delivered</span>
-      </div>
-
-      <div>
-        <strong>100%</strong>
-        <span>Passion for UI</span>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="hero-visual">
-    <div class="visual-card">
-      <div class="card-top">
-        <span>AKANSHU</span>
-        <span>2026</span>
-      </div>
-
-      <div class="avatar">
-        AV
-      </div>
-
-      <h3>UI/UX + Frontend</h3>
-      <p>Designing interfaces. Building experiences.</p>
-
-      <div class="code-lines">
-        <span>&lt;design&gt;</span>
-        <span>userExperience();</span>
-        <span>cleanCode();</span>
-        <span>&lt;/design&gt;</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="section-label">01 — ABOUT ME</div>
-
-  <div class="about-grid">
-
-    <div>
-      <h2>
-        Designer's eye.
-        <br>
-        <span>Developer's mind.</span>
-      </h2>
-    </div>
-
-    <div class="about-text">
-      <p>
-        I am a UI/UX and Frontend Developer with 8+ years of experience
-        creating digital products that balance beautiful design with
-        solid engineering.
-      </p>
-
-      <p>
-        My work sits at the intersection of design and technology —
-        transforming ideas, requirements and complex workflows into
-        intuitive digital experiences.
-      </p>
-
-      <p>
-        I enjoy solving real-world problems through thoughtful interfaces,
-        reusable components and maintainable frontend architecture.
-      </p>
-
-      <a href="#experience" class="text-link">
-        Explore my experience →
+<div class="site">
+  <header class="nav" [class.scrolled]="isScrolled" [class.open]="menuOpen">
+    <div class="nav-bar wrap">
+      <a class="logo" href="#home" (click)="goTo('home', $event)">
+        <img src="logo.png" alt="Akanshu Creation" />
       </a>
+
+      <nav
+        id="site-nav"
+        class="nav-links"
+        aria-label="Primary"
+        [attr.inert]="isMobile && !menuOpen ? '' : null"
+      >
+        <a href="#about" [class.active]="activeSection === 'about'" (click)="goTo('about', $event)">About</a>
+        <a href="#experience" [class.active]="activeSection === 'experience'" (click)="goTo('experience', $event)">Experience</a>
+        <a href="#skills" [class.active]="activeSection === 'skills'" (click)="goTo('skills', $event)">Skills</a>
+        <a href="#projects" [class.active]="activeSection === 'projects'" (click)="goTo('projects', $event)">Projects</a>
+        <a href="#designs" [class.active]="activeSection === 'designs'" (click)="goTo('designs', $event)">Designs</a>
+        <a href="#contact" [class.active]="activeSection === 'contact'" (click)="goTo('contact', $event)">Contact</a>
+      </nav>
+
+      <a class="nav-cta" href="resume.html">Resume</a>
+
+      <button
+        class="menu"
+        type="button"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen"
+        aria-controls="site-nav"
+        [attr.aria-label]="menuOpen ? 'Close menu' : 'Open menu'"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </header>
 
-  </div>
-</section>
-
-
-<!-- SKILLS -->
-<section id="skills" class="section skills-section">
-
-  <div class="section-label">02 — EXPERTISE</div>
-
-  <h2 class="section-title">
-    Tools & technologies
-    <span>I work with.</span>
-  </h2>
-
-  <div class="skills-grid">
-
-    <div class="skill-card">
-      <span class="skill-number">01</span>
-      <h3>UI / UX Design</h3>
-      <p>
-        User-centered design, wireframes, prototypes, responsive interfaces
-        and design systems.
-      </p>
-      <div class="tags">
-        <span>Figma</span>
-        <span>Wireframing</span>
-        <span>Prototyping</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <span class="skill-number">02</span>
-      <h3>Frontend Development</h3>
-      <p>
-        Building scalable and responsive web applications with modern
-        frontend technologies.
-      </p>
-      <div class="tags">
-        <span>Angular</span>
-        <span>TypeScript</span>
-        <span>JavaScript</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <span class="skill-number">03</span>
-      <h3>API Integration</h3>
-      <p>
-        Connecting frontend applications with backend services and
-        building smooth data-driven experiences.
-      </p>
-      <div class="tags">
-        <span>REST API</span>
-        <span>GraphQL</span>
-        <span>JSON</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <span class="skill-number">04</span>
-      <h3>AI Assisted Development</h3>
-      <p>
-        Using modern AI tools to improve productivity, problem solving,
-        coding and design workflows.
-      </p>
-      <div class="tags">
-        <span>ChatGPT</span>
-        <span>Copilot</span>
-        <span>Gemini</span>
-        <span>Cursor</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- EXPERIENCE -->
-<section id="experience" class="section">
-
-  <div class="section-label">03 — EXPERIENCE</div>
-
-  <h2 class="section-title">
-    My professional
-    <span>journey.</span>
-  </h2>
-
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <div class="timeline-year">2022 — Present</div>
-
-      <div class="timeline-content">
-        <h3>Senior UI/UX & Frontend Developer</h3>
-        <p class="company">Professional Experience</p>
-
-        <p>
-          Working on enterprise web and mobile applications, frontend
-          architecture, UI/UX implementation, reusable components and
-          API integrations.
+  <main id="main">
+    <section id="home" class="hero wrap">
+      <div class="hero-copy">
+        <p class="status"><i></i> Open to opportunities · Hyderabad</p>
+        <p class="eyebrow">Software Engineer</p>
+        <h1>Akanshu Vishwakarma</h1>
+        <p class="lead">
+          UI developer with 8 years of experience building responsive web applications.
+          I work in Angular, React, TypeScript, and REST APIs, with reusable components and Agile delivery.
         </p>
-
-        <div class="tags">
-          <span>Angular</span>
-          <span>TypeScript</span>
-          <span>UI/UX</span>
-          <span>API</span>
+        <div class="actions">
+          <a class="btn primary" href="resume.html">View resume</a>
+          <a class="btn ghost" href="#projects" (click)="goTo('projects', $event)">View projects</a>
         </div>
       </div>
-    </div>
 
-
-    <div class="timeline-item">
-      <div class="timeline-year">Earlier</div>
-
-      <div class="timeline-content">
-        <h3>UI/UX & Frontend Developer</h3>
-        <p class="company">Previous Professional Experience</p>
-
-        <p>
-          Designed and developed responsive interfaces and contributed
-          to complete product development cycles from design to delivery.
-        </p>
-
-        <div class="tags">
-          <span>Web Design</span>
-          <span>Frontend</span>
-          <span>Responsive UI</span>
+      <figure class="portrait-card">
+        <img
+          class="portrait"
+          [class.ready]="showPhoto"
+          src="profile.png"
+          alt="Akanshu Vishwakarma"
+          (load)="showPhoto = true"
+          (error)="showPhoto = false"
+        />
+        <div class="portrait-fallback" [hidden]="showPhoto" aria-hidden="true">
+          <strong>AV</strong>
         </div>
-      </div>
-    </div>
+        <figcaption>Software Engineer</figcaption>
+      </figure>
+    </section>
 
-  </div>
-</section>
-
-
-<!-- PROJECTS -->
-<section id="projects" class="section projects-section">
-
-  <div class="section-label">04 — SELECTED WORK</div>
-
-  <h2 class="section-title">
-    Projects that
-    <span>made an impact.</span>
-  </h2>
-
-  <div class="projects-grid">
-
-    <article class="project-card featured">
-      <div class="project-number">01</div>
-
-      <div class="project-content">
-        <p class="project-type">ENTERPRISE APPLICATION</p>
-
-        <h3>Customer Portal</h3>
-
-        <p>
-          A modern enterprise portal designed to simplify complex
-          customer workflows with a clean and responsive interface.
-        </p>
-
-        <div class="tags">
-          <span>Angular</span>
-          <span>UI/UX</span>
-          <span>API Integration</span>
-        </div>
-
-        <a href="#contact">View Case Study →</a>
-      </div>
-    </article>
-
-
-    <article class="project-card">
-      <div class="project-number">02</div>
-
-      <div class="project-content">
-        <p class="project-type">MOBILE APPLICATION</p>
-
-        <h3>Mobile Experience</h3>
-
-        <p>
-          User-focused mobile experience with intuitive navigation,
-          responsive layouts and reusable UI components.
-        </p>
-
-        <div class="tags">
-          <span>UI/UX</span>
-          <span>Mobile</span>
-          <span>Frontend</span>
-        </div>
-
-        <a href="#contact">View Case Study →</a>
-      </div>
-    </article>
-
-
-    <article class="project-card">
-      <div class="project-number">03</div>
-
-      <div class="project-content">
-        <p class="project-type">DESIGN SYSTEM</p>
-
-        <h3>Reusable UI System</h3>
-
-        <p>
-          A collection of reusable components and patterns designed
-          to improve consistency and development efficiency.
-        </p>
-
-        <div class="tags">
-          <span>Design System</span>
-          <span>Components</span>
-          <span>Figma</span>
-        </div>
-
-        <a href="#contact">View Case Study →</a>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-
-<!-- JOURNEY -->
-<section id="journey" class="section journey-section">
-
-  <div class="section-label">05 — MY JOURNEY</div>
-
-  <div class="journey-grid">
-
-    <div>
-      <h2>
-        8+ years of
-        <span>learning, building</span>
-        and growing.
-      </h2>
-    </div>
-
-    <div class="journey-text">
-
-      <div class="journey-point">
-        <span>01</span>
+    <section id="about" class="section wrap">
+      <div class="about">
         <div>
-          <h3>Started with Design</h3>
+          <p class="kicker">About me</p>
+          <h2>Design and engineering on the same screen.</h2>
+        </div>
+        <div class="about-copy">
           <p>
-            Understanding users, visual hierarchy and the fundamentals
-            of great interface design.
+            Creative and detail-oriented UI developer with 8 years of experience building responsive, user-friendly web applications.
+            I work with Angular, React.js, HTML, CSS, Bootstrap, JavaScript, and TypeScript.
           </p>
+          <p>
+            Day to day that means REST API integration, reusable UI components, performance, responsive layouts, cross-browser checks, and Agile delivery.
+          </p>
+          <p>
+            MBA / PGDM (IT &amp; HR), RKDF University, 2017. B.Tech in Electronics &amp; Telecommunication, RGPV Bhopal, 2015.
+          </p>
+          <p>Languages: English and Hindi. Interests: technical blogging, UI design exploration, and photography.</p>
         </div>
       </div>
+    </section>
 
-      <div class="journey-point">
-        <span>02</span>
+    <section id="experience" class="section wrap">
+      <div class="section-head">
+        <p class="kicker">Work experience</p>
+        <h2>Companies, roles, and the work in each one.</h2>
+      </div>
+
+      <ol class="timeline">
+        <li class="job">
+      <p class="when">1 Feb 2022 — Till now</p>
+      <div>
+        <h3>Software Engineer</h3>
+        <p class="company">Virtual Guard Services (VGS) · Pro-Vigil · Hyderabad</p>
+        <p class="company">Joining: 1 February 2022 · Till now</p>
+            <ul class="duties">
+              <li>Develop and maintain responsive web applications using Angular, HTML, CSS, Bootstrap, JavaScript, and TypeScript.</li>
+              <li>Collaborate with UX/UI designers and cross-functional teams on interactive interfaces.</li>
+              <li>Integrate REST APIs for dynamic data and keep the frontend performant.</li>
+              <li>Build reusable UI components that stay responsive across browsers and devices.</li>
+            </ul>
+            <p class="mini-label">Projects</p>
+            <ul class="tags">
+              <li>Pro-View</li>
+              <li>Pro-Safe</li>
+              <li>Pro-Fit</li>
+              <li>NVR</li>
+            </ul>
+            <p class="mini-label">Technologies</p>
+            <ul class="tags">
+              <li>Angular</li>
+              <li>TypeScript</li>
+              <li>JavaScript</li>
+              <li>HTML / CSS</li>
+              <li>Bootstrap</li>
+              <li>REST API</li>
+              <li>Figma</li>
+            </ul>
+          </div>
+        </li>
+
+    <li class="job">
+      <p class="when">8 Sep 2021 — 16 Dec 2021</p>
+      <div>
+        <h3>UI Developer</h3>
+        <p class="company">eTeam Infoservices Pvt. Ltd.</p>
+        <p class="company">Joining: 8 September 2021 · Last working day: 16 December 2021</p>
+        <ul class="duties">
+          <li>Developed responsive web interfaces with Dust.js templates, HTML, CSS, Bootstrap, JavaScript, and ECMAScript.</li>
+          <li>Built reusable Dust partials and layouts, and handled screen sizes with media queries.</li>
+          <li>Integrated data into the templates and checked cross-browser and mobile behavior.</li>
+        </ul>
+        <p class="mini-label">Project</p>
+        <ul class="tags">
+          <li>Verizon</li>
+        </ul>
+        <p class="mini-label">Technologies</p>
+        <ul class="tags">
+          <li>Dust.js</li>
+          <li>JavaScript</li>
+          <li>ECMAScript</li>
+          <li>Bootstrap</li>
+          <li>Media queries</li>
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="job">
+      <p class="when">Jun 2020 — Sep 2021</p>
+      <div>
+        <h3>Career break</h3>
+        <p class="company">COVID-19 lockdown</p>
+      </div>
+    </li>
+
+    <li class="job">
+      <p class="when">5 Aug 2019 — 10 Jun 2020</p>
+          <div>
+            <h3>UI Developer</h3>
+            <p class="company">Octohub Technology Pvt. Ltd.</p>
+            <p class="company">Joining: 5 August 2019 · Last working day: 10 June 2020</p>
+            <ul class="duties">
+              <li>Developed responsive user interfaces using Angular, Bootstrap, and Material Design.</li>
+              <li>Built Shrisha Reddy, a fashion e-commerce site for bridal wear, groom wear, fancy sarees, sherwanis, and western wear.</li>
+              <li>Integrated REST APIs and performed cross-browser testing.</li>
+            </ul>
+            <p class="mini-label">Project</p>
+            <ul class="tags">
+              <li>Shrisha Reddy</li>
+            </ul>
+            <p class="mini-label">Technologies</p>
+            <ul class="tags">
+              <li>Angular</li>
+              <li>Bootstrap</li>
+              <li>Material Design</li>
+              <li>REST API</li>
+              <li>Git</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="job">
+          <p class="when">22 May 2017 — 30 Jul 2019</p>
+          <div>
+            <h3>Software Engineer</h3>
+            <p class="company">YBR Infotechs Pvt. Ltd. · Hyderabad</p>
+            <p class="company">Joining: 22 May 2017 · Last working day: 30 July 2019</p>
+            <ul class="duties">
+              <li>Built dynamic web applications using Angular 2, 4, and 5, HTML, CSS, and JavaScript.</li>
+              <li>Joined Scrum ceremonies and prepared unit test cases.</li>
+            </ul>
+            <p class="mini-label">Technologies</p>
+            <ul class="tags">
+              <li>Angular</li>
+              <li>JavaScript</li>
+              <li>HTML / CSS</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="skills" class="section wrap">
+      <div class="section-head">
+        <p class="kicker">Technical skills</p>
+        <h2>What I use to design and ship the interface.</h2>
+      </div>
+      <div class="skill-groups">
         <div>
-          <h3>Moved into Development</h3>
-          <p>
-            Turning designs into functional, responsive and scalable
-            frontend applications.
-          </p>
+          <p class="kicker">Frameworks</p>
+          <ul class="skill-board">
+            <li>Angular</li>
+            <li>React.js</li>
+            <li>Ionic</li>
+            <li>Node.js</li>
+            <li>WordPress</li>
+          </ul>
         </div>
-      </div>
-
-      <div class="journey-point">
-        <span>03</span>
         <div>
-          <h3>Design + Code</h3>
-          <p>
-            Combining UI/UX thinking with frontend engineering to build
-            better digital products.
-          </p>
+          <p class="kicker">Scripting</p>
+          <ul class="skill-board">
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>ECMAScript</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>SCSS</li>
+            <li>Less</li>
+          </ul>
         </div>
-      </div>
-
-      <div class="journey-point">
-        <span>04</span>
         <div>
-          <h3>AI-Assisted Future</h3>
-          <p>
-            Exploring how AI can make design, development and problem
-            solving faster and smarter.
-          </p>
+          <p class="kicker">Libraries</p>
+          <ul class="skill-board">
+            <li>jQuery</li>
+            <li>Dust.js</li>
+            <li>Bootstrap</li>
+            <li>Material Design</li>
+            <li>Kendo UI</li>
+            <li>NgRx</li>
+          </ul>
+        </div>
+        <div>
+          <p class="kicker">UX tools</p>
+          <ul class="skill-board">
+            <li>Figma</li>
+            <li>Adobe Photoshop</li>
+            <li>Canva</li>
+            <li>Wireframing</li>
+            <li>Prototyping</li>
+            <li>UI/UX Design</li>
+            <li>Responsive Design</li>
+          </ul>
+        </div>
+        <div>
+          <p class="kicker">Other tools</p>
+          <ul class="skill-board">
+            <li>REST APIs</li>
+            <li>API Integration</li>
+            <li>Git / GitHub</li>
+            <li>Bitbucket</li>
+            <li>Jenkins</li>
+            <li>Jira</li>
+            <li>AWS</li>
+            <li>Firebase</li>
+            <li>Visual Studio</li>
+            <li>Android Studio</li>
+          </ul>
+        </div>
+        <div>
+          <p class="kicker">Daily tools</p>
+          <ul class="skill-board">
+            <li>Cursor</li>
+            <li>ChatGPT</li>
+          </ul>
         </div>
       </div>
+    </section>
 
-    </div>
+    <section id="projects" class="section wrap">
+      <div class="section-head">
+        <p class="kicker">Featured projects</p>
+        <h2>Interfaces I have built for operations teams.</h2>
+      </div>
 
-  </div>
-</section>
+      <div class="project-list">
+        <article class="project">
+          <div class="gallery">
+            <div class="shot">
+              <img [src]="monitoringShots[monitoringIndex].src" [alt]="monitoringShots[monitoringIndex].alt" />
+            </div>
+            <div class="thumbs">
+              @for (shot of monitoringShots; track shot.src; let i = $index) {
+                <button type="button" [class.active]="monitoringIndex === i" (click)="monitoringIndex = i" [attr.aria-label]="shot.alt">
+                  <img [src]="shot.src" alt="" />
+                </button>
+              }
+            </div>
+          </div>
+          <div>
+            <p class="project-kicker">Pro-View</p>
+            <h3>Live monitoring workspace</h3>
+            <p>
+              Web and mobile screens for live views, reports, footage, the site map, zone hours, and crime prevention.
+            </p>
+            <p><strong>My role.</strong> UI engineering: layout, navigation, status, and the Angular screens that hold the live data.</p>
+            <p><strong>Challenge.</strong> A large set of cameras and reports has to stay scannable.</p>
+            <p><strong>Solution.</strong> Status counts up front, a clear live-view path, and reports grouped by time so the next step is obvious.</p>
+            <ul class="tags">
+              <li>Angular</li>
+              <li>TypeScript</li>
+              <li>UI/UX</li>
+              <li>REST API</li>
+            </ul>
+          </div>
+        </article>
 
+        <article class="project">
+          <div class="gallery">
+            <div class="shot">
+              <img [src]="profitShots[profitIndex].src" [alt]="profitShots[profitIndex].alt" />
+            </div>
+            <div class="thumbs">
+              @for (shot of profitShots; track shot.src; let i = $index) {
+                <button type="button" [class.active]="profitIndex === i" (click)="profitIndex = i" [attr.aria-label]="shot.alt">
+                  <img [src]="shot.src" alt="" />
+                </button>
+              }
+            </div>
+          </div>
+          <div>
+            <p class="project-kicker">Pro-Fit · Operations</p>
+            <h3>Device management dashboard</h3>
+            <p>
+              A control surface for sites, devices, and cameras: totals, connection status, filters, and site conditions.
+            </p>
+            <p><strong>My role.</strong> Dashboard and table UI, so a large fleet can be read without hunting through the page.</p>
+            <p><strong>Challenge.</strong> Sites, devices, and cameras each need a different level of detail.</p>
+            <p><strong>Solution.</strong> Summary cards for the fleet, then filters and tables for the individual device.</p>
+            <ul class="tags">
+              <li>Angular</li>
+              <li>TypeScript</li>
+              <li>Data UI</li>
+              <li>Responsive</li>
+            </ul>
+          </div>
+        </article>
 
-<!-- CONTACT -->
-<section id="contact" class="contact-section">
+        <article class="project">
+          <div class="gallery">
+            <div class="shot">
+              <img [src]="proviewShots[proviewIndex].src" [alt]="proviewShots[proviewIndex].alt" />
+            </div>
+          </div>
+          <div>
+            <p class="project-kicker">Pro-View · Admin</p>
+            <h3>Admin dashboard</h3>
+            <p>
+              Platform and source charts for the Pro-View admin panel, with the same workspace used for sessions and page activity.
+            </p>
+            <p><strong>My role.</strong> Filter bar, table hierarchy, and the screen structure around the activity log.</p>
+            <p><strong>Challenge.</strong> Activity logs get long, and every extra click slows an investigation.</p>
+            <p><strong>Solution.</strong> Filters for source, page, and time sit with the table, so the row someone needs stays in view.</p>
+            <ul class="tags">
+              <li>Angular</li>
+              <li>NgRx</li>
+              <li>Material</li>
+              <li>REST API</li>
+            </ul>
+          </div>
+        </article>
 
-  <div class="section-label">06 — CONTACT</div>
+        <article class="project">
+          <div>
+            <p class="project-kicker">VGS · Pro-Safe</p>
+            <h3>Pro-Safe</h3>
+            <p>Product screens for Pro-Safe at Virtual Guard Services, in the same monitoring suite as Pro-View and Pro-Fit.</p>
+            <p><strong>My role.</strong> Angular interface work for the product workflow.</p>
+            <ul class="tags">
+              <li>Angular</li>
+              <li>TypeScript</li>
+              <li>Bootstrap</li>
+            </ul>
+          </div>
+        </article>
 
-  <h2>
-    Have a project
-    <span>in mind?</span>
-  </h2>
+        <article class="project">
+          <div>
+            <p class="project-kicker">VGS · NVR</p>
+            <h3>NVR</h3>
+            <p>Interface work for the NVR product at Virtual Guard Services, used with the monitoring tools.</p>
+            <p><strong>My role.</strong> Angular screens for the NVR workflow.</p>
+            <ul class="tags">
+              <li>Angular</li>
+              <li>TypeScript</li>
+              <li>Bootstrap</li>
+            </ul>
+          </div>
+        </article>
 
-  <p>
-    Let's build something meaningful together.
-  </p>
+        <article class="project">
+          <div>
+            <p class="project-kicker">eTeam · Verizon</p>
+            <h3>Verizon web interfaces</h3>
+            <p>UI work for Verizon while at eTeam Infoservices, using Dust.js templates, Bootstrap, and media queries.</p>
+            <p><strong>My role.</strong> Templates, reusable partials, and responsive layout.</p>
+            <ul class="tags">
+              <li>Dust.js</li>
+              <li>JavaScript</li>
+              <li>ECMAScript</li>
+              <li>Bootstrap</li>
+              <li>Media queries</li>
+            </ul>
+          </div>
+        </article>
 
-  <a class="contact-btn" href="mailto:your-email@example.com">
-    Get In Touch ↗
-  </a>
+        <article class="project">
+          <div>
+            <p class="project-kicker">Octohub · Shrisha Reddy</p>
+            <h3>Shrisha Reddy</h3>
+            <p>Fashion e-commerce for bridal wear, groom wear, fancy sarees, sherwanis, and western wear, built at Octohub Technology.</p>
+            <p><strong>My role.</strong> Shopping screens and responsive layout for the fashion catalog.</p>
+            <ul class="tags">
+              <li>Angular</li>
+              <li>Bootstrap</li>
+              <li>Material Design</li>
+            </ul>
+          </div>
+        </article>
 
-  <div class="contact-footer">
+        <article class="project">
+          <div class="gallery">
+            <div class="shot">
+              <img [src]="ipforkShots[ipforkIndex].src" [alt]="ipforkShots[ipforkIndex].alt" />
+            </div>
+            <div class="thumbs">
+              @for (shot of ipforkShots; track shot.src; let i = $index) {
+                <button type="button" [class.active]="ipforkIndex === i" (click)="ipforkIndex = i" [attr.aria-label]="shot.alt">
+                  <img [src]="shot.src" alt="" />
+                </button>
+              }
+            </div>
+          </div>
+          <div>
+            <p class="project-kicker">IPFORK · UI sample</p>
+            <h3>IPFORK</h3>
+            <p>UI sample of an English shop for LAN, WAN, MAN, and PAN hardware: routers, modems, switches, hubs, and the rest of the network range. Each product card has a photo, its own model series, a price, and a Buy option.</p>
+            <ul class="tags">
+              <li>Angular</li>
+              <li>Bootstrap</li>
+              <li>Material Design</li>
+            </ul>
+          </div>
+        </article>
 
-    <div>
-      <strong>Akanshu Vishwakarma</strong>
-      <span>UI/UX & Frontend Developer</span>
-    </div>
+        <article class="project">
+          <div>
+            <p class="project-kicker">SuiteBite</p>
+            <h3>SuiteBite</h3>
+            <p>Frontend components for SuiteBite, built with Angular, Bootstrap, and Material Design.</p>
+            <ul class="tags">
+              <li>Angular</li>
+              <li>Bootstrap</li>
+              <li>Material Design</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <div class="social-links">
-      <a href="#" target="_blank">LinkedIn</a>
-      <a href="#" target="_blank">GitHub</a>
-    </div>
+    <section id="designs" class="section wrap">
+      <div class="section-head">
+        <p class="kicker">UI/UX design and coding</p>
+        <h2>How I design a screen, then build it in code.</h2>
+      </div>
+      <div class="design-grid">
+        <article>
+          <span>01</span>
+          <h3>Structure</h3>
+          <p>Information hierarchy for tools with many states, so the important number or action is the first thing on the screen.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Wireframes</h3>
+          <p>Flows and layouts in Figma before the Angular work, so engineering builds the interaction that was intended.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Visual UI</h3>
+          <p>Type, spacing, icons, and brand details that stay consistent from one product screen to the next.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Responsive UI</h3>
+          <p>The same workflow on a wide monitor and a smaller laptop, without hiding the controls people use most.</p>
+        </article>
+        <article class="craft-card">
+          <span>05</span>
+          <h3>UI/UX Expertise</h3>
+          <p>Graphics, icons, and the path a person takes through a website.</p>
+          <ul class="craft-list">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16l5-9 4 6 2-3 5 6"/><path d="M4 20h16"/></svg>
+              SVG maker
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l6 4-6 4V9z"/></svg>
+              GIF maker
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="9" cy="9" r="1.4"/><path d="M20 15l-4.5-4.5L7 19"/></svg>
+              PNG maker
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.2 4.6L19 8.2l-3.5 3.4.8 4.9L12 14.8 7.7 16.5l.8-4.9L5 8.2l4.8-.6L12 3z"/></svg>
+              Icon &amp; logo maker
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg>
+              Wireframe
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l8-12 3 5 5-3"/><path d="M14 16h6"/></svg>
+              Sketch
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="7" height="5" rx="1"/><rect x="14" y="4" width="7" height="5" rx="1"/><rect x="8.5" y="15" width="7" height="5" rx="1"/><path d="M6.5 9v3h11V9M12 12v3"/></svg>
+              Website flow
+            </li>
+          </ul>
+        </article>
+        <article class="craft-card">
+          <span>06</span>
+          <h3>UI coding</h3>
+          <p>The same screens are coded in HTML5 and CSS3, with Bootstrap 4, Material, icons, and TypeScript. Frameworks are Angular and React.</p>
+          <ul class="tags">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Bootstrap 4</li>
+            <li>Material</li>
+            <li>Icons</li>
+            <li>TypeScript</li>
+            <li>Frameworks · Angular, React</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-  </div>
+    <section id="resume" class="section wrap">
+      <div class="resume-panel">
+        <div>
+          <p class="kicker">Resume</p>
+          <h2>A one-page summary of the same work.</h2>
+          <p class="lead">Open the printable page, then use the browser’s print dialog if you want a PDF.</p>
+        </div>
+        <a class="btn primary" href="resume.html">View resume</a>
+      </div>
+    </section>
 
-</section>
+    <section id="contact" class="section wrap">
+      <div class="contact-panel">
+        <p class="kicker">Contact</p>
+        <h2>Have a product that needs a clearer interface?</h2>
+        <p class="lead">I am happy to talk about software engineering and UI/UX work.</p>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+            </span>
+            <span>{{ location }}</span>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 3h3l1.5 4-2 1.2a12 12 0 0 0 5.3 5.3L17 12l4 1.5V17a2 2 0 0 1-2.2 2A16 16 0 0 1 5 6.2 2 2 0 0 1 7 4z"/></svg>
+            </span>
+            <a [href]="'tel:' + phone">{{ phone }}</a>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.7 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M9 10.2c.2 1.6 1.8 3.2 3.4 3.6.4.1.8 0 1-.3l.5-.8c.2-.2.4-.3.7-.2.6.2 1.2.4 1.8.4.3 0 .6.3.6.6v1.1c0 .4-.3.7-.7.7A6.2 6.2 0 0 1 9.2 9.7c0-.4.3-.7.7-.7h1.1c.3 0 .6.3.6.6 0 .6.2 1.2.4 1.8.1.3 0 .5-.2.7l-.8.5c-.3.2-.4.6-.3 1z"/></svg>
+            </span>
+            <a href="https://wa.me/917049898326" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">{{ whatsapp }}</a>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg>
+            </span>
+            <a [href]="'mailto:' + email">{{ email }}</a>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg>
+            </span>
+            <a [href]="'mailto:' + emailAlt">{{ emailAlt }}</a>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">
+              <svg class="mark" viewBox="0 0 24 24"><path d="M4.8 9h3.2v11H4.8zM6.4 3.8a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8zM10.4 9h3.1v1.5c.5-.9 1.6-1.8 3.3-1.8 2.4 0 4 1.6 4 4.8V20h-3.2v-6.2c0-1.6-.6-2.6-2-2.6-1 0-1.7.7-2 1.4-.1.3-.1.6-.1.9V20h-3.1V9z"/></svg>
+            </span>
+            <a [href]="linkedin" target="_blank" rel="noopener noreferrer">linkedin.com/in/akanshu-vishwakarma-ba810b17b</a>
+          </li>
+          @if (github) {
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg class="mark" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-2.8 17.5c.5.1.7-.2.7-.5v-1.6c-2.5.5-3-1.1-3-1.1-.5-1-1.1-1.3-1.1-1.3-.9-.6.1-.6.1-.6.9.1 1.4.9 1.4.9.8 1.4 2.2 1 2.7.8.1-.6.3-1 .6-1.2-2-.2-4.1-1-4.1-4.4a3.5 3.5 0 0 1 .9-2.4 3.2 3.2 0 0 1 .1-2.4s.8-.2 2.5.9a8.6 8.6 0 0 1 4.6 0c1.7-1.1 2.5-.9 2.5-.9a3.2 3.2 0 0 1 .1 2.4 3.5 3.5 0 0 1 .9 2.4c0 3.4-2.1 4.2-4.1 4.4.3.3.6.8.6 1.7v2.5c0 .3.2.6.7.5A9 9 0 0 0 12 3z"/></svg>
+              </span>
+              <a [href]="github" target="_blank" rel="noopener noreferrer">github.com/vishwakarmaakanshu-cpu</a>
+            </li>
+          }
+        </ul>
+      </div>
+    </section>
+  </main>
 
-
-<footer>
-  © 2026 Akanshu Vishwakarma. Designed & built with Angular.
-</footer>
+  <footer class="wrap">
+    <p>Akanshu Vishwakarma</p>
+    <p>Software Engineer · UI/UX Developer</p>
+  </footer>
+</div>

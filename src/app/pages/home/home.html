@@ -1,0 +1,30 @@
+<section class="hero wrap">
+  <div class="hero-copy">
+    <p class="status"><i></i> Open to opportunities · Hyderabad</p>
+    <p class="eyebrow">Software Engineer</p>
+    <h1>Akanshu Vishwakarma</h1>
+    <p class="lead">
+      UI developer with 8 years of experience building responsive web applications.
+      I work in Angular, React, TypeScript, and REST APIs, with reusable components and Agile delivery.
+    </p>
+    <div class="actions">
+      <a class="btn primary" routerLink="/resume">View resume</a>
+      <a class="btn ghost" routerLink="/projects">View projects</a>
+    </div>
+  </div>
+
+  <figure class="portrait-card">
+    <img
+      class="portrait"
+      [class.ready]="showPhoto"
+      src="profile.png"
+      alt="Akanshu Vishwakarma"
+      (load)="showPhoto = true"
+      (error)="showPhoto = false"
+    />
+    <div class="portrait-fallback" [hidden]="showPhoto" aria-hidden="true">
+      <strong>AV</strong>
+    </div>
+    <figcaption>Software Engineer · UI/UX</figcaption>
+  </figure>
+</section>

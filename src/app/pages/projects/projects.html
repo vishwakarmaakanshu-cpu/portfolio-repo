@@ -1,0 +1,190 @@
+<section class="section wrap">
+  <div class="section-head">
+    <p class="kicker">Featured projects</p>
+    <h2>Interfaces I have built for operations teams.</h2>
+  </div>
+
+  <div class="project-list">
+    <article class="project">
+      <div class="gallery">
+        <div class="shot">
+          <img [src]="monitoringShots[monitoringIndex].src" [alt]="monitoringShots[monitoringIndex].alt" />
+        </div>
+        <div class="thumbs">
+          @for (shot of monitoringShots; track shot.src; let i = $index) {
+            <button type="button" [class.active]="monitoringIndex === i" (click)="monitoringIndex = i" [attr.aria-label]="shot.alt">
+              <img [src]="shot.src" alt="" />
+            </button>
+          }
+        </div>
+      </div>
+      <div>
+        <p class="project-kicker">Pro-View</p>
+        <h3>Live monitoring workspace</h3>
+        <p>
+          Web and mobile screens for live views, reports, footage, the site map, zone hours, and crime prevention.
+        </p>
+        <p><strong>My role.</strong> UI engineering: layout, navigation, status, and the Angular screens that hold the live data.</p>
+        <p><strong>Challenge.</strong> A large set of cameras and reports has to stay scannable.</p>
+        <p><strong>Solution.</strong> Status counts up front, a clear live-view path, and reports grouped by time so the next step is obvious.</p>
+        <ul class="tags">
+          <li>Angular</li>
+          <li>TypeScript</li>
+          <li>UI/UX</li>
+          <li>REST API</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="gallery">
+        <div class="shot">
+          <img [src]="profitShots[profitIndex].src" [alt]="profitShots[profitIndex].alt" />
+        </div>
+        <div class="thumbs">
+          @for (shot of profitShots; track shot.src; let i = $index) {
+            <button type="button" [class.active]="profitIndex === i" (click)="profitIndex = i" [attr.aria-label]="shot.alt">
+              <img [src]="shot.src" alt="" />
+            </button>
+          }
+        </div>
+      </div>
+      <div>
+        <p class="project-kicker">Pro-Fit · Operations</p>
+        <h3>Device management dashboard</h3>
+        <p>
+          A control surface for sites, devices, and cameras: totals, connection status, filters, and site conditions.
+        </p>
+        <p><strong>My role.</strong> Dashboard and table UI, so a large fleet can be read without hunting through the page.</p>
+        <p><strong>Challenge.</strong> Sites, devices, and cameras each need a different level of detail.</p>
+        <p><strong>Solution.</strong> Summary cards for the fleet, then filters and tables for the individual device.</p>
+        <ul class="tags">
+          <li>Angular</li>
+          <li>TypeScript</li>
+          <li>Data UI</li>
+          <li>Responsive</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="gallery">
+        <div class="shot">
+          <img [src]="proviewShots[proviewIndex].src" [alt]="proviewShots[proviewIndex].alt" />
+        </div>
+      </div>
+      <div>
+        <p class="project-kicker">Pro-View · Admin</p>
+        <h3>Admin dashboard</h3>
+        <p>
+          Platform and source charts for the Pro-View admin panel, with the same workspace used for sessions and page activity.
+        </p>
+        <p><strong>My role.</strong> Filter bar, table hierarchy, and the screen structure around the activity log.</p>
+        <p><strong>Challenge.</strong> Activity logs get long, and every extra click slows an investigation.</p>
+        <p><strong>Solution.</strong> Filters for source, page, and time sit with the table, so the row someone needs stays in view.</p>
+        <ul class="tags">
+          <li>Angular</li>
+          <li>NgRx</li>
+          <li>Material</li>
+          <li>REST API</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="project">
+      <div>
+        <p class="project-kicker">VGS · Pro-Safe</p>
+        <h3>Pro-Safe</h3>
+        <p>Product screens for Pro-Safe at Virtual Guard Services, in the same monitoring suite as Pro-View and Pro-Fit.</p>
+        <p><strong>My role.</strong> Angular interface work for the product workflow.</p>
+        <ul class="tags">
+          <li>Angular</li>
+          <li>TypeScript</li>
+          <li>Bootstrap</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="project">
+      <div>
+        <p class="project-kicker">VGS · NVR</p>
+        <h3>NVR</h3>
+        <p>Interface work for the NVR product at Virtual Guard Services, used with the monitoring tools.</p>
+        <p><strong>My role.</strong> Angular screens for the NVR workflow.</p>
+        <ul class="tags">
+          <li>Angular</li>
+          <li>TypeScript</li>
+          <li>Bootstrap</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="project">
+      <div>
+        <p class="project-kicker">eTeam · Verizon</p>
+        <h3>Verizon web interfaces</h3>
+        <p>UI work for Verizon while at eTeam Infoservices, using Dust.js templates, Bootstrap, and media queries.</p>
+        <p><strong>My role.</strong> Templates, reusable partials, and responsive layout.</p>
+        <ul class="tags">
+          <li>Dust.js</li>
+          <li>JavaScript</li>
+          <li>ECMAScript</li>
+          <li>Bootstrap</li>
+          <li>Media queries</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="project">
+      <div>
+        <p class="project-kicker">Octohub · Shrisha Reddy</p>
+        <h3>Shrisha Reddy</h3>
+        <p>Fashion e-commerce for bridal wear, groom wear, fancy sarees, sherwanis, and western wear, built at Octohub Technology.</p>
+        <p><strong>My role.</strong> Shopping screens and responsive layout for the fashion catalog.</p>
+        <ul class="tags">
+          <li>Angular</li>
+          <li>Bootstrap</li>
+          <li>Material Design</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="gallery">
+        <div class="shot">
+          <img [src]="ipforkShots[ipforkIndex].src" [alt]="ipforkShots[ipforkIndex].alt" />
+        </div>
+        <div class="thumbs">
+          @for (shot of ipforkShots; track shot.src; let i = $index) {
+            <button type="button" [class.active]="ipforkIndex === i" (click)="ipforkIndex = i" [attr.aria-label]="shot.alt">
+              <img [src]="shot.src" alt="" />
+            </button>
+          }
+        </div>
+      </div>
+      <div>
+        <p class="project-kicker">IPFORK · UI sample</p>
+        <h3>IPFORK</h3>
+        <p>UI sample of an English shop for LAN, WAN, MAN, and PAN hardware: routers, modems, switches, hubs, and the rest of the network range. Each product card has a photo, its own model series, a price, and a Buy option.</p>
+        <ul class="tags">
+          <li>Angular</li>
+          <li>Bootstrap</li>
+          <li>Material Design</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="project">
+      <div>
+        <p class="project-kicker">SuiteBite</p>
+        <h3>SuiteBite</h3>
+        <p>Frontend components for SuiteBite, built with Angular, Bootstrap, and Material Design.</p>
+        <ul class="tags">
+          <li>Angular</li>
+          <li>Bootstrap</li>
+          <li>Material Design</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
