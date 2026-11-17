@@ -50,7 +50,7 @@ export class App implements AfterViewInit, OnDestroy {
     }));
     return {
       id: index,
-      speed: `${((5 + Math.random() * 18) * 1.2).toFixed(2)}s`,
+      speed: `${(14 + Math.random() * 32).toFixed(2)}s`,
       delay: `${(-Math.random() * 22).toFixed(2)}s`,
       blur: `${(Math.random() * Math.random() * 5.5).toFixed(2)}px`,
       size: `${(16 + Math.random() * 14).toFixed(1)}px`,
@@ -252,6 +252,7 @@ export class App implements AfterViewInit, OnDestroy {
     this.faqWriting = true;
     let shown = 0;
     let spokenTo = 0;
+    const spoken = text.replace(/[./]/g, ' ');
 
     const paint = (): void => {
       this.faqTyped = text.slice(0, shown);
@@ -266,25 +267,25 @@ export class App implements AfterViewInit, OnDestroy {
       if (shown >= spokenTo) {
         return;
       }
-      const behind = spokenTo - shown;
-      shown = Math.min(spokenTo, shown + (behind > 8 ? 2 : 1));
+      shown += 1;
       paint();
-    }, 36);
+    }, 92);
 
     if (typeof window === 'undefined' || !window.speechSynthesis) {
       spokenTo = text.length;
       return;
     }
 
-    const utterance = new SpeechSynthesisUtterance(text);
+    const utterance = new SpeechSynthesisUtterance(spoken);
     utterance.lang = 'en-IN';
-    utterance.rate = 1.04;
+    utterance.rate = 0.84;
     utterance.pitch = 1.16;
     utterance.voice = this.maleVoice();
 
     const markSpoken = (index: number): void => {
-      const nextSpace = text.indexOf(' ', index);
-      spokenTo = nextSpace === -1 ? text.length : nextSpace + 1;
+      const nextSpace = spoken.indexOf(' ', Math.max(0, index));
+      const next = nextSpace === -1 ? text.length : nextSpace + 1;
+      spokenTo = Math.max(spokenTo, next);
     };
 
     utterance.onstart = () => markSpoken(0);
@@ -308,7 +309,7 @@ export class App implements AfterViewInit, OnDestroy {
       if (spokenTo === 0 && this.faqOpen >= 0) {
         spokenTo = text.length;
       }
-    }, 600);
+    }, 1400);
   }
 
   private maleVoice(): SpeechSynthesisVoice | null {
